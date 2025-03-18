@@ -1,4 +1,8 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("Documento cargado completamente.");
+    console.log(document.getElementById('resultado')); // Verifica si aparece en la consola
+});
 
 // Arreglo para almacenar los nombres de los amigos
 let listaDeNombres = [];
@@ -37,30 +41,41 @@ function actualizarLista() {
 
 // Función para sortear un amigo
 function sortearAmigo() {
-    console.log("✅ Botón presionado, ejecutando sorteo...");
+    console.log("Función sortearAmigo() ejecutada");
 
     let resultado = document.getElementById('resultado');
-
     if (!resultado) {
-        console.log("❌ ERROR: No se encontró el elemento 'resultado'");
+        console.error("El elemento #resultado no fue encontrado en el DOM.");
         return;
     }
 
+    console.log("Lista de nombres antes del sorteo:", listaDeNombres);
+
     if (listaDeNombres.length === 0) {
-        console.log("⚠️ No hay amigos para sortear, mostrando mensaje...");
-        resultado.innerHTML = "<span class='mensaje-error'>❌ ¡No hay amigos para sortear! ❌</span>";
+        console.warn("No hay amigos en la lista para sortear.");
+        resultado.innerHTML = "<span class='mensaje-error'>❌ ¡No hay amigos para sortear! ❌</span>";  
         return;
     }
 
     let indiceAleatorio = Math.floor(Math.random() * listaDeNombres.length);
     let nombreSorteado = listaDeNombres.splice(indiceAleatorio, 1)[0];
 
+    console.log("Nombre seleccionado:", nombreSorteado);
+    console.log("Lista después de sorteo:", listaDeNombres);
+
     resultado.innerHTML = `🎉 ${nombreSorteado} 🎉`;
-    console.log(`🎯 Se sorteó a: ${nombreSorteado}`);
 
     actualizarLista();
     actualizarEstadoBoton();
+
+    // 🔴 Agregar esto para que cuando la lista esté vacía, muestre el mensaje de error
+    if (listaDeNombres.length === 0) {
+        console.log("Lista vacía después del sorteo. Mostrando mensaje de error.");
+        resultado.innerHTML = "<span class='mensaje-error'>❌ ¡No hay amigos para sortear! ❌</span>";
+    }
 }
+
+
 
 
 // Función para actualizar el estado del botón de sorteo
@@ -72,4 +87,16 @@ function actualizarEstadoBoton() {
 // Deshabilitar el botón al inicio
 document.addEventListener("DOMContentLoaded", () => {
     actualizarEstadoBoton();
+});
+
+//
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("Documento cargado completamente.");
+    actualizarEstadoBoton();
+
+    let botonSortear = document.getElementById("botonSortear");
+    botonSortear.addEventListener("click", () => {
+        console.log("Botón 'Sortear' presionado");  // <-- Verifica si detecta el clic
+        sortearAmigo();
+    });
 });
