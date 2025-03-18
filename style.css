@@ -160,3 +160,31 @@ ul {
 .button-draw:hover {
     background-color: var(--color-button-hover);
 }
+
+/* Mensaje de error cuando no hay más amigos */
+.mensaje-error {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+/* Nueva animacion para el sorteo */
+.result-list li {
+    animation: aparecer 0.5s ease-in-out;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* Que el botón se vea diferente */
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
