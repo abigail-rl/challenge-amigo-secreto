@@ -23,10 +23,18 @@ Este es un proyecto web interactivo para realizar sorteos de "Amigo Secreto" de 
 4. Una vez que hayas ingresado todos los nombres, haz clic en "Sortear Amigo" para obtener un resultado aleatorio.
 5. Disfruta el sorteo. 🎉
 
-## 🖼 Captura de Pantalla
+## 🖼 Conce la interfaz
 <img width="1031" alt="Imagen del challenge" src="https://github.com/user-attachments/assets/0206aae4-b70d-4364-99d0-e9eb85f34947" />
+
+## Cómo usarlo 🚀  
+1️⃣ **Agrega nombres** a la lista ✍️  
+2️⃣ **Presiona el botón** de sortear 🎰  
+3️⃣ **Descubre el amigo secreto** 🎉  
+![mi-gif](https://github.com/user-attachments/assets/fdf44007-246b-4531-8c9d-42e4b1c89f70)
+
 
 ## 🔧 Personalización
 Si deseas modificar el diseño o funcionalidades, puedes editar los archivos `style.css` y `app.js` según tus necesidades.
+
 
 
